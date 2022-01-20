@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Custom Properties */
+
+:root {
+    /* font weight */
+    --fw-thin: 100;
+    --fw-light: 300;
+    --fw-bold: 700;
+
+    /* font sizes */
+    --fs-p: 1em;
+    --fs-h1: 3em;
+    --fs-descripive: 0.75em;
+    --fs-submenu: 1.125em;
+
+    /* colors */
+    --clr-250: #1a0100;
+    --clr-500: #6E0400;
+    --clr-750: #ED0800;
+    --clr-900: #fffefe;
+    
+    /* card width */
+    --card-width: 25em;
+    --card-gap: 1.75em;
+}
+
+body {
+    color: var(--clr-250);
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.25em;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+/* Background style */
+
+.background-image {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    filter: saturate(1.2);
+    height: auto;
+    opacity: .1;
+    animation: blurred 10s ease-in-out;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes blurred {
+    0% {
+        filter: blur(20px);
+    }
+
+    50% {
+        filter: blur(80px) saturate(10) hue-rotate(180deg);
+    }
+
+    100% {
+        filter: blur(20px);
+    }
+}
+
+/* Header */
+
+
+.title-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    background-color:rgba(255, 255, 255, .4);
+    height: 9em;
+    box-shadow: 0 3px 3px rgba(0 0 0 / .4); 
+}
+
+#title {    
+    font-size: calc(var(--fs-h1) * 1.25);
+    font-family: 'Great Vibes', cursive;
+
+    color: var(--clr-500);
+    opacity: .75;
+    text-shadow: 0 0 5px white;
+
+    width: max-content;
+    position: absolute;
+    top: 7vh;
+    left: 14vw;
+
+    transition: opacity 300ms ease;
+    transition: color 500ms ease 50ms;
+}
+
+#title:hover,
+#title:focus {
+    opacity: 100%;
+    text-shadow: 0 0 20px white;
+    filter: saturate(150%);
+    color: var(--clr-750);
+}
+
+.location-title {
+    font-size: 1.5rem;
+    color: var(--clr-250);
+
+    position: absolute;
+    bottom: 3vh;
+    right: 14vw;
+    
+    opacity: .5;
+    max-width: max-content;
+}
+
+.navbar {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.fa-shopping-cart {
+    list-style: none;
+    color: var(--clr-500);
+    display: inline-block;
+    font-size: calc(var(--fs-submenu) * 1.5);
+    transition: color 150ms ease;
+}
+
+.fa-shopping-cart:hover,
+.fa-shopping-cart:focus {
+    color: var(--clr-750);
+}
