@@ -238,3 +238,54 @@ form > label{
     background-color: yellow;
     width: var(--card-width);
 }
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    height: max-content;
+    margin-block: 3em;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 450px) {
+    * {
+        padding: 0;
+        margin: 0;
+        font-size: .85rem;
+        column-gap: 0;
+    }
+
+    #title {
+        top: 5vh;
+        left: 8vw;
+    }
+
+    .location-title {
+        top: 9vh;
+        left: 8vw;
+    }
+
+    .navbar {
+        left: 85%;
+    }
+
+    .menu-items {
+        margin-block: 1em;
+    }
+
+    .menu-item-card {
+        margin: 0 auto;
+    }
+
+    .menu-item-price {
+        padding: .5em 0 0 .125em;
+    }
+
+    footer {
+        margin-inline: 17.5%;
+    }   
+}
