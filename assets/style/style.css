@@ -142,3 +142,99 @@ body {
 .fa-shopping-cart:focus {
     color: var(--clr-750);
 }
+
+/* Menu Section */
+
+.menu {
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--card-gap);
+    justify-content: center;
+}
+
+.menu-item-card {
+    width: var(--card-width);
+    height: auto;
+    padding: var(--card-gap);
+    display: grid;
+    grid-template-columns: 
+        1fr
+        1fr
+        1fr
+        1fr
+        .725fr
+        1.125fr;
+}
+
+.menu-items {
+    width: var(--card-width);
+    background-color: rgba(245 245 245 / .3);
+    border-radius: 7px;
+    box-shadow: 0 0 5px rgba(0 0 0 / .4);    
+}
+
+.menu-item-name,
+.menu-item-price {
+    font-size: 1.125rem;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+}
+
+.menu-item-header {
+    background-color: var(--clr-750);
+    box-shadow: 0 0 2.5px rgba(0 0 0 / .5);
+    color: var(--clr-900);
+    border-radius: 5px;
+    padding: .5em .5em;
+    margin-bottom: .5em;
+    grid-column: span 6;
+}
+
+
+.menu-item-name {
+    grid-column: span 5;
+    padding: .5em 0 .5em .5em;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    margin-block: .5em;
+    transition: background-color 150ms ease;
+}
+
+.menu-item-name:hover,
+.menu-item-name:focus {
+    background-color: var(--clr-750);
+    opacity: .9;
+    color: var(--clr-900);
+}
+
+.menu-item-price {
+    text-align: left; 
+    padding: .5em;
+    margin-block: .5em;
+}
+
+.form-fam-meal {
+    font-size: var(--fs-submenu);
+}
+
+.form-fam-meal-item {
+    margin-block: .5em;
+}
+
+select {
+    font-size: var(--fs-submenu);
+    padding: .125em;
+}
+
+.submit-family-meal {
+    display: block;
+    padding: .25em 1em;
+    font-size: var(--fs-submenu);
+}
+
+form > label{
+    background-color: yellow;
+    width: var(--card-width);
+}
