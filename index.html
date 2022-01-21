@@ -8,22 +8,28 @@
     <title>Di Lucia's Clonshaugh</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<a href="index.html">
-    <img class="background-image" src="assets/images/burgers-on-plate-coca-cola.jpeg"
+<img class="background-image" src="assets/images/burgers-on-plate-coca-cola.jpeg"
         alt="Burgers on Plate beside Coca Cola Cans">
-</a>
-<section class="title-wrapper">
-    <nav>
+<div class="hero-container">
+    <nav class="title-wrapper">
         <a href="index.html" id="title">Di Lucia's</a>
         <p class="location-title">Clonshaugh</p>
-        <a href="shop"><i class="fas fa-shopping-cart"></i></a>
+        <a href="shop.html"><i class="fas fa-shopping-cart"></i></a>
     </nav>
-</section>
-<section>
-    <img src="assets/images/seb-reivers-Yyocu6DHoL0-unsplash.jpg" alt="Fish and Chips" class="hero-image">
-    <h1>Serving delicious food seven days a week!</h1>
-    <button class="cta">Feeling Hungry?</button>
-</section>
+    <section class="hero-section">
+        <picture class="hero-image">
+            <source srcset="assets/images/hero-sizes/hero-480.jpg" media="(max-width: 460px)">
+            <source srcset="assets/images/hero-sizes/hero-640.jpg" media="(max-width: 640px)">
+            <source srcset="assets/images/hero-sizes/hero-1024.jpg" media="(max-width: 1024px)">
+            <source srcset="assets/images/hero-sizes/hero-1920.jpg" media="(max-width: 1920px)">
+            <source srcset="assets/images/hero-sizes/hero-2560.jpg" media="(max-width: 2560px)">
+            <img src="assets/images/hero-sizes/hero-4000.jpg" alt="Fish and Chips">
+        </picture>
+        <h1 class="tagline">Serving delicious food seven days a week!</h1>
+        <a href="#" class="cta">Feed me!</a>
+        
+    </section>
+</div>
 <!-- <section class="menu">
     <article class="menu-items">
         <div class="menu-item-card">
@@ -304,17 +310,18 @@
             </div>
         </div>
     </article>
-</section> -->
-
+</section>
+ -->
 
 <body>
-    <footer>
+    <!-- <footer>
         <p>Unit 7, Priorswood Shopping Centre, Dublin 17</p>
         <p>EIRCODE</p>
-        <a href="https://www.facebook.com/Di-Lucias-Priorswood-867877246612696/" aria-label="Di Lucia's Facebook Page(Opens in a new tab)">Facebook Page</a>
+        <a href="https://www.facebook.com/Di-Lucias-Priorswood-867877246612696/"
+            aria-label="Di Lucia's Facebook Page(Opens in a new tab)">Facebook Page</a>
         <p>(01) 867 0422</p>
         <p>Copyright Di Lucia's 2022</p>
-    </footer>
+    </footer> -->
     <script src="https://kit.fontawesome.com/e620967c09.js" crossorigin="anonymous"></script>
 </body>
 
