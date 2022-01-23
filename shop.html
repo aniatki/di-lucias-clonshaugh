@@ -29,23 +29,24 @@
             <tbody>
                 <tr>
                     <td class="item-name cart-item">Item 1</td>
-                    <td><input class="quantity-value" type="number"></td>
+                    <td><input class="quantity-value" type="number" min="1"></td>
                     <td class="price-value">8.00</td>
+                    <td><input class="clear-btn" type="button" value="&times;"></td>
                 </tr>
                 <tr class="cart-subtotal">
+                    <td>Subtotal</td>
                     <td></td>
-                    <td></td>
-                    <td>25.00</td>
+                    <td class="subtotal-value">25.00</td>
                 </tr>
-                <tr class="vat">
-                    <td>Cart items Value Added Tax at</td>
-                    <td>23%</td>
-                    <td>23.00</td>
+                <tr>
+                    <td class="vat-desc">Cart items Value Added Tax at 23%</td>
+                    <td class="vat-value"></td>
+                    <td class="vat-price">23.00</td>
                 </tr>
                 <tr class="cart-total">
+                    <td><strong>Total</strong></td>
                     <td></td>
-                    <td></td>
-                    <td>25.00</td>
+                    <td class="total-value"><strong>25.00</strong></td>
                 </tr>
             </tbody>
         </table>
