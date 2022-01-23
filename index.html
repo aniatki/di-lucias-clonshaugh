@@ -14,17 +14,17 @@
         alt="Burgers on Plate beside Coca Cola Cans">
     <div class="hero-container">
         <picture class="hero-image">
-            <source srcset="assets/images/hero-sizes/hero-480.jpg" media="(max-width: 460px)">
-            <source srcset="assets/images/hero-sizes/hero-640.jpg" media="(max-width: 640px)">
-            <source srcset="assets/images/hero-sizes/hero-1024.jpg" media="(max-width: 1024px)">
-            <source srcset="assets/images/hero-sizes/hero-1920.jpg" media="(max-width: 1920px)">
-            <source srcset="assets/images/hero-sizes/hero-2560.jpg" media="(max-width: 2560px)">
-            <img src="assets/images/hero-sizes/hero-4000.jpg" alt="Fish and Chips">
+            <source class="hero-image" srcset="assets/images/hero-sizes/hero-480.jpg" media="(max-width: 460px)">
+            <source class="hero-image" srcset="assets/images/hero-sizes/hero-640.jpg" media="(max-width: 640px)">
+            <source class="hero-image" srcset="assets/images/hero-sizes/hero-1024.jpg" media="(max-width: 1024px)">
+            <source class="hero-image" srcset="assets/images/hero-sizes/hero-1920.jpg" media="(max-width: 1920px)">
+            <source class="hero-image" srcset="assets/images/hero-sizes/hero-2560.jpg" media="(max-width: 2560px)">
+            <img class="hero-image" src="assets/images/hero-sizes/hero-4000.jpg" alt="Fish and Chips">
         </picture>
         <p class="sv">salt and vinegar?</p>
         <section class="cta__wrapper">
             <h1 class="tagline">Serving delicious food seven days a week!</h1>
-            <a href="#" class="cta">Feed me!</a>
+            <a href="#" class="cta" id="action-button">Feed me!</a>
         </section>
     </div>
     <nav class="title-wrapper">
@@ -32,7 +32,7 @@
         <p class="location-title">Clonshaugh</p>
         <a href="shop.html"><i class="fas fa-shopping-cart"></i></a>
     </nav>
-    <!-- <section class="menu">
+    <section class="menu" id="menu">
         <article class="menu-items">
             <div class="menu-item-card">
                 <h2 class="menu-item-header">Chips</h2>
@@ -316,14 +316,16 @@
                 </div>
             </div>
         </article>
-    </section> -->
+    </section>
     <footer>
         <p>Copyright Di Lucia's <span id="year">0000</span></p>
         <a href="tel:+353018670422"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://goo.gl/maps/2bzmMWP4LbpjCWyo9" target="_blank" aria-label="Google Maps location link (Opens in a new tab)"><i class="fas fa-location-arrow"></i></a>
+        <a href="https://goo.gl/maps/2bzmMWP4LbpjCWyo9" target="_blank"
+            aria-label="Google Maps location link (Opens in a new tab)"><i class="fas fa-location-arrow"></i></a>
         <a href="https://www.facebook.com/Di-Lucias-Priorswood-867877246612696/" target="_blank"
             aria-label="Di Lucia's Facebook Page(Opens in a new tab)"><i class="fab fa-facebook-f"></i></a>
     </footer>
+    <script src="assets/script/main.js"></script>
     <script src="https://kit.fontawesome.com/e620967c09.js" crossorigin="anonymous"></script>
 </body>
 
