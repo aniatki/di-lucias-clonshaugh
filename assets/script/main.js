@@ -1,31 +1,12 @@
-document.getElementById('year').innerText.replace("0000", getFullYear());
+const cta = document.getElementsByClassName('cta')[0];
+const heroSection = document.getElementsByClassName('hero-container')[0];
+const menu = document.getElementsByClassName('menu')[0];
 
-var menu = document.getElementsByClassName('menu');
-var menuItem = document.getElementsByClassName('menu-item-name');
-var menuItemPrice = document.getElementsByClassName('menu-item-price');
-var submitFamMeal = document.getElementsByClassName('submit-family-meal');
-var cartItem = document.getElementsByClassName('cart-item');
-var clearFromCartBtn = document.getElementsByClassName('clear-btn');
-var cartRow = document.getElementsByTagName('tr');
+cta.addEventListener('click', _ => {
+    menu.classList.toggle('hide');
+    heroSection.classList.toggle('hide');
+})
 
-for (var i = 0; i < menuItem.length || i < cartItem.length; i++) {
-    var button = menuItem[i];
-    button.addEventListener('click', () => {
-        cartRow[0].innerText = `
-            <tr>
-            <td class="item-name cart-item">${}</td>
-            <td><input class="quantity-value" type="number" min="1"></td>
-            <td class="price-value">${}</td>
-            <td><input class="clear-btn" type="button" value="&times;"></td>
-        </tr>`
-        });
-    
-    
-}
-
-function removeItemFromCart() {}
-function showDropDown() {}
-function hideDropDown() {}
-function calculateSubtotal() {}
-function calculateVat() {}
-function calculateTotalPrice() {}
+const year = document.getElementById('year');
+const nd = new Date();
+year.innerText = nd.getFullYear();
