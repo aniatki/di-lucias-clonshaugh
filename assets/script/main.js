@@ -1,31 +1,36 @@
-
-
 // Adding items to cart
 
-var item = document.getElementsByClassName('menu-item-name');
 var itemPrice = document.getElementsByClassName('menu-item-price');
 var row = document.getElementById('cart-row');
 
+var i;
 var x;
-var y;
 var itemsList;
+var menuItems = [];
+var emptyItemObj = {};
 
-for (x = 0; x < item.length; x++) {
-    var itemName = item[x].value
-    var itemPriceText = itemPrice[x].textContent
-    itemsList = {
-        "name": itemName,
-        "price": itemPriceText
-    };
-    // console.log(itemsList)
-    // let addedItemToCart = row.createElement('tr')
-    // let newRow = addedItemToCart.createElement = ` <td class="item-name cart-item">${itemsList.name}</td>
-    // <td><input class="quantity-value" type="number" min="1"></td>
-    // <td class="price-value">${itemsList.price}</td>
-    // <td><input class="clear-btn" type="button" value="&times;"></td>`;
-    // addedItemToCart.appendChild(newRow);
-    // console.log(newRow)
+
+let item = document.getElementsByClassName('menu-item-name');
+
+for (i = 0; i < item.length; i++) {
+        item[i].addEventListener('click', _ => {
+        //         for (i = 0; i < item.length; i++) {
+            //         }        
+            // var itemPriceText = itemPrice[i].innerText.replace('€', '');
+            // console.log(itemPriceText)
+            console.log(i)
+        })
 }
+        
+        // itemsList = {
+        //         "name": itemName,
+        //         "price": itemPriceText
 
-
-
+        // works
+        // var tableBody = document.querySelector('tbody')
+        // let cartRow = document.createElement('tr')
+        // cartRow.innerHTML = `
+        // <td class="item-name cart-item">${itemsList.itemName}</td>
+        // `
+        // tableBody.append(cartRow)
+// })}}

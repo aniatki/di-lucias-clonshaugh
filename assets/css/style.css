@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&family=Khula:wght@700&family=Heebo:wght@900&display=swap');
 
+/* General properties */
 
 *,
 *::before,
@@ -15,6 +16,11 @@ button {
 
 a {
     text-decoration: none;
+}
+
+::selection {
+    color: var(--clr-750);
+    background: transparent;
 }
 
 /* Custom Properties */
@@ -49,6 +55,7 @@ body {
     scroll-behavior: smooth;
     position: relative;
     height: 100vh;
+    z-index: -1;
 }
 
 /* Background style */
@@ -81,21 +88,21 @@ body {
 /* Header */
 
 nav {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 5em;
     top: 0;
     left: 0;
-    backdrop-filter: blur(200px);
-    border-radius: 0 0 5px 5px;
+    backdrop-filter: blur(50px);
+    border-radius: 0 0 10px 10px;
     background-color: rgba(0 0 0 / .3);
     background-clip: padding-box;
+    box-shadow: 0 0 20px rgba(0 0 0 / .4);
 }
 
 #title {    
     font-size: calc(var(--fs-h1) * 1.25);
     font-family: 'Great Vibes', cursive;
-    
     color: var(--clr-900);
     opacity: .75;
     text-shadow: 0 0 5px rgba(0 0 0 / .1);
@@ -104,7 +111,6 @@ nav {
     top: 50%;
     transform: translateY(-25%);
     left: calc(1em + 1vw);
-    
     transition: opacity 200ms ease, color 250ms ease 25ms;
 }
 
@@ -236,6 +242,7 @@ nav {
 /* Menu Section */
 
 .menu {
+    z-index: -1;
     position: relative;
     top: 7em;
     padding-bottom: 5em;
@@ -246,11 +253,6 @@ nav {
 }
 
 .menu-item-card {
-    justify-content: center;
-    width: var(--card-width);
-    height: auto;
-    padding: var(--card-gap);
-    
     display: grid;
     grid-template-columns: 
         1fr
@@ -259,10 +261,12 @@ nav {
         1fr
         .7fr
         1.3fr;
-}
-
-.menu-items {
     background-color: rgba(245 245 245 / .3);
+    grid-auto-rows: max-content;
+    width: var(--card-width);
+    height: auto;
+    padding: var(--card-gap);
+    
     border-radius: 7px;
     box-shadow: 0 0 5px rgba(0 0 0 / .4);    
 }
@@ -282,19 +286,19 @@ nav {
     padding: .5em .5em;
     margin-bottom: .5em;
     grid-column: span 6;
+    height: max-content;
 }
 
-
 .menu-item-name {
-    grid-column: span 5;
-    padding: .5em 0 .5em .5em;
-    overflow: hidden;
     cursor: pointer;
+    overflow: hidden;
+    grid-column: span 5;
+    height: max-content;
+    padding: .5em 0 .5em .5em;
     border: none;
     text-align: left;
     margin-block: .5em;
     transition: background-color 150ms ease;
-    
 }
 
 .menu-item-name:hover {
@@ -310,6 +314,7 @@ nav {
     font-size: calc(var(--fs-p) * 1.125);
     position: relative;
     font-weight: var(--fw-bold);
+    height: max-content;
 }
 
 .form-fam-meal {
@@ -341,14 +346,13 @@ select {
 /* Cart styles */
 
 .cart-container {
-    background:rgba(0 0 0 / .025);
-    border-radius: 20px;
-    width: clamp(320px, 70vw, 70%);
-    min-height: 77.5%;
-    margin-inline: auto;
     position: relative;
     top: 8em;
-    padding: 2em;
+    width: clamp(320px, 90vw, 65%);
+    background:rgba(0 0 0 / .025);
+    border-radius: 20px;
+    margin-inline: auto;
+    padding: clamp(.25em, 5vw, 10vw) 2em;
     background-color: rgba(240, 90, 31, .1);
     box-shadow: 0 0 5px rgba(0 0 0 / .2);
 }
@@ -362,22 +366,19 @@ select {
 table {
     margin-top: 1em;
     font-size: var(--fs-submenu);
+    
 }
 
 td {
   height: 2em;
 }
 
-.item,
 .item-name {
     width: 75%;
 }
 
-.quantity {
-    width: 15%;
-}
 .quantity-value {
-    width: 4em;
+    width: clamp(1.5em, 2em, 4em);
     border: none;
     background-color: rgba(255 255 255 / .5);
     border-radius: .5em;
@@ -443,9 +444,9 @@ footer {
     padding-block: 1em;
     color: var(--clr-900);
     font-size: var(--fs-descripive);
-    
     background-color: var(--clr-250);
     opacity: .8;
+    
 }
 
 
