@@ -202,7 +202,7 @@ nav {
     text-transform: uppercase;
     
     color: var(--clr-250);
-    background-color: rgba(240, 90, 31, 1);
+    background-color: hsla(340, 95%, 50%, 0.9);
     border-radius: 40px;
     box-shadow: 
         0 5px hsla(2 25% 46% / .5),
@@ -220,6 +220,7 @@ nav {
 
 .cta:hover {
     color: var(--clr-900);
+    background-color: hsla(40, 95%, 50%, 0.9);
     box-shadow: 
         0 2.5px hsla(2 25% 46% / .75),
         0 5px hsla(2 60% 46% / .6),
@@ -228,7 +229,7 @@ nav {
 
 .cta:focus {
     color: var(--clr-900);
-    background-color: rgb(240, 30, 30);
+    background-color: hsla(0 88% 53% / 1);
     box-shadow: none;
 }
 
@@ -311,22 +312,19 @@ nav {
     font-weight: var(--fw-bold);
 }
 
-.menu-item-price::after {
-    position: absolute;
-    content: "<i class="fas fa-shopping-cart"></i>";
-    inset: 0;
-    left: -7em;
-    margin-block: auto;   
-    display: grid;
-    place-items: center;
-}
-
 .form-fam-meal {
     font-size: var(--fs-submenu);
 }
 
 .form-fam-meal-item {
     margin-block: .5em;
+}
+
+.form-fam-meal select,
+.form-fam-meal p,
+.form-fam-meal button {
+    position: relative;
+    inset: 0 .5em;
 }
 
 select {
@@ -445,7 +443,7 @@ footer {
     padding-block: 1em;
     color: var(--clr-900);
     font-size: var(--fs-descripive);
-    /* backdrop-filter: blur(20px); */
+    
     background-color: var(--clr-250);
     opacity: .8;
 }
@@ -504,7 +502,21 @@ footer a {
     .cta {
         font-size: calc(var(--fs-cta) * .8);
     }
+
+    .menu-item-card {
+        width: calc(var(--card-width) * .925);
+    }
     
+    .menu-item-name,
+    .menu-item-price,
+    .form-fam-meal-item {
+        font-size: 1rem;
+    }
+
+    .form-fam-meal {
+        
+    }
+
     footer {
         padding-inline: .5em;
     }   
