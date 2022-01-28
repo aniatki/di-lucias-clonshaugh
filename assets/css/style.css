@@ -293,7 +293,7 @@ nav {
     cursor: pointer;
     overflow: hidden;
     grid-column: span 5;
-    height: max-content;
+    
     padding: .5em 0 .5em .5em;
     border: none;
     text-align: left;
@@ -348,43 +348,53 @@ select {
 .cart-container {
     position: relative;
     top: 8em;
-    width: clamp(320px, 90vw, 65%);
-    background:rgba(0 0 0 / .025);
-    border-radius: 20px;
     margin-inline: auto;
     padding: clamp(.25em, 5vw, 10vw) 2em;
+    
+    width: clamp(320px, 90vw, 80%);
+    background:rgba(0 0 0 / .025);
+    border-radius: 20px;
     background-color: rgba(240, 90, 31, .1);
     box-shadow: 0 0 5px rgba(0 0 0 / .2);
+    font-size: var(--fs-submenu);   
+    
+    display: flex;
 }
 
 .cart-title {
     color: var(--clr-250);
     font-size: calc(var(--fs-h1) * .5);
     line-height: .8;
-}
-
-table {
-    margin-top: 1em;
-    font-size: var(--fs-submenu);
+    width: 100%;
     
 }
 
-td {
-  height: 2em;
+.cart-list {
+    background: red;
+}
+
+.cart-list li {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .item-name {
     width: 75%;
+    grid-column: 1 / 4;
 }
 
 .quantity-value {
-    width: clamp(1.5em, 2em, 4em);
+    width: 3em;
+    height: 2em;
     border: none;
-    background-color: rgba(255 255 255 / .5);
+    background-color: rgba(255 255 255 / .7);
     border-radius: .5em;
+    box-shadow: inset 0 0 5px rgba(0 0 0 / .2);
+    grid-column: 4 / 5;
 }
 
-.price-value {
+.right-align {
     text-align: right;
 }
 
@@ -392,6 +402,10 @@ td {
 .price-value,
 .quantity-value {
     padding: 0.5em;
+}
+
+.price-value {
+    grid-column: 5 / 6;
 }
 
 .clear-btn {
@@ -402,16 +416,26 @@ td {
     color: var(--clr-750);
     border: none;
     cursor: pointer;
+    box-shadow: inset 0 0 5px rgba(0 0 0 / .2);
+    grid-column: 6 / 7;
 }
 
-.clear-btn:hover,
-.clear-btn:focus-within {
+.clear-btn:hover {
     background: rgba(0, 0, 0, .4);
     color: var(--clr-900);
 }
 
 .vat-desc {
     text-align: left;
+    grid-column: 1 / 4;
+}
+
+.subtotal {
+    grid-column: 1 / 4;
+}
+
+.subtotal-value {
+    grid-column: 5 / 6;
 }
 
 .price-value::before,

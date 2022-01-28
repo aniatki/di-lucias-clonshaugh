@@ -10,7 +10,7 @@ cta[0].addEventListener('click', _ => {
 })
 
 const familyForm = document.getElementsByClassName('form-fam-meal');
-const familyMeal = document.querySelector('[value="Family Burger Meal"]');
+const familyMeal = document.getElementById('family-meal');
 const submitBtn = document.getElementsByClassName('submit-family-meal');
 
 familyMeal.addEventListener('click', _ => {

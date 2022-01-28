@@ -1,36 +1,70 @@
-// Adding items to cart
+// Updating copyright year
 
-var itemPrice = document.getElementsByClassName('menu-item-price');
-var row = document.getElementById('cart-row');
-
-var i;
-var x;
-var itemsList;
-var menuItems = [];
-var emptyItemObj = {};
+nd = new Date();
+year.innerText = nd.getFullYear();
 
 
-let item = document.getElementsByClassName('menu-item-name');
+// Get item name and price(number)
 
-for (i = 0; i < item.length; i++) {
-        item[i].addEventListener('click', _ => {
-        //         for (i = 0; i < item.length; i++) {
-            //         }        
-            // var itemPriceText = itemPrice[i].innerText.replace('€', '');
-            // console.log(itemPriceText)
-            console.log(i)
-        })
-}
+let tBody = document.getElementById('tableBody');
+let cartRow = document.getElementsByClassName('cart-row');
+
+let btn = document.getElementsByClassName('menu-item-name');
+let itemPrice = document.getElementsByClassName('menu-item-price');
+
+for (var i = 0; i < btn.length; i++) {
+    let setBtn = btn[i];
+    setBtn.addEventListener('click', function (event) {
+        let btnClicked = event.target;
+        var itemName = btnClicked.innerText;
+        var itemPriceValue = btnClicked.nextElementSibling.innerText;
+        var itemPriceN = parseFloat(itemPriceValue.replace('€', ''));
+        console.log(itemName, itemPriceN);
         
-        // itemsList = {
-        //         "name": itemName,
-        //         "price": itemPriceText
+        // Use variables to create a new row in cart
+        
+        let newRow = document.createElement('tr')
+        let column = newRow.createElement('td')
+        column.textContent('adhfbadfb')
+        tBody.appendChild(column)
+        
+    });
+}
 
-        // works
-        // var tableBody = document.querySelector('tbody')
-        // let cartRow = document.createElement('tr')
-        // cartRow.innerHTML = `
-        // <td class="item-name cart-item">${itemsList.itemName}</td>
-        // `
-        // tableBody.append(cartRow)
-// })}}
+// Removing items from cart
+
+let clearBtn = document.getElementsByClassName('clear-btn');
+for (var i = 0; i < clearBtn.length; i++) {
+    let setClearBtn = clearBtn[i];
+    setClearBtn.addEventListener('click', function (event) {
+        let buttonClicked = event.target;
+        buttonClicked.parentElement.parentElement.remove();
+    });
+}
+
+// Subtotal
+
+function calculateSubtotal() {
+
+}
+
+// VAT
+
+function calculateVat() {
+
+}
+
+// Total
+
+function calculateTotal() {
+
+}
+
+// <td class="item-name">${itemName}</td>
+// <td class="quantity-value"><input class="right-align" type="number" min="1"></td>
+// <td class="price-value right-align">${itemPriceN}</td>
+// <button class="clear-btn">&times;</button></td>
+let newTd = document.createElement('div')
+newTd.textContent('new text div') 
+
+document.body.appendChild(newTd)
