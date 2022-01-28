@@ -19,17 +19,24 @@ for (var i = 0; i < btn.length; i++) {
         var itemName = btnClicked.innerText;
         var itemPriceValue = btnClicked.nextElementSibling.innerText;
         var itemPriceN = parseFloat(itemPriceValue.replace('€', ''));
-        console.log(itemName, itemPriceN);
-        
-        // Use variables to create a new row in cart
-        
-        let newRow = document.createElement('tr')
-        let column = newRow.createElement('td')
-        column.textContent('adhfbadfb')
-        tBody.appendChild(column)
-        
+        createRow(event);
     });
+
+    // Use variables to create a new row in cart
+
+    function createRow(event) {
+        event.preventDefault();
+        let newRow = `<li class="cart-row">
+            <p class="item-name">${itemName}</p> 
+            <input class="quantity-value right-align" type="number" min="1">
+            <button class="clear-btn">&times;</button> 
+            <p class="price-value right-align">${itemPriceN}</p>
+        </li>`
+        tBody.innerHTML = newRow;
+    }
 }
+
+
 
 // Removing items from cart
 
@@ -38,7 +45,7 @@ for (var i = 0; i < clearBtn.length; i++) {
     let setClearBtn = clearBtn[i];
     setClearBtn.addEventListener('click', function (event) {
         let buttonClicked = event.target;
-        buttonClicked.parentElement.parentElement.remove();
+        buttonClicked.parentElement.remove();
     });
 }
 
@@ -59,12 +66,11 @@ function calculateVat() {
 function calculateTotal() {
 
 }
+// Pay
 
-// <td class="item-name">${itemName}</td>
-// <td class="quantity-value"><input class="right-align" type="number" min="1"></td>
-// <td class="price-value right-align">${itemPriceN}</td>
-// <button class="clear-btn">&times;</button></td>
-let newTd = document.createElement('div')
-newTd.textContent('new text div') 
-
-document.body.appendChild(newTd)
+document.getElementById('pay').addEventListener('click', _ => {
+    for (var i = -2; i < clearBtn.length; i++) {
+        clearBtn[0].parentElement.remove();
+    }
+    alert('Thank you for your purchase!')
+})

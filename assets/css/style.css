@@ -43,7 +43,7 @@ a {
     --clr-500: #6E0400;
     --clr-750: hsl(2, 100%, 46%);
     --clr-900: #fffefe;
-    
+
     /* card width */
     --card-width: 25em;
     --card-gap: 1.75em;
@@ -100,7 +100,7 @@ nav {
     box-shadow: 0 0 20px rgba(0 0 0 / .4);
 }
 
-#title {    
+#title {
     font-size: calc(var(--fs-h1) * 1.25);
     font-family: 'Great Vibes', cursive;
     color: var(--clr-900);
@@ -128,8 +128,8 @@ nav {
     top: 50%;
     transform: translateY(-50%);
     right: 1vw;
-    
-    
+
+
     opacity: .3;
     max-width: max-content;
 }
@@ -161,7 +161,7 @@ nav {
 }
 
 .hero-image {
-    position: absolute;     
+    position: absolute;
     inset: 0;
     object-fit: cover;
     filter: brightness(.8);
@@ -206,28 +206,28 @@ nav {
     font-family: 'Khula';
     font-size: var(--fs-cta);
     text-transform: uppercase;
-    
+
     color: var(--clr-250);
     background-color: hsla(340, 95%, 50%, 0.9);
     border-radius: 40px;
-    box-shadow: 
+    box-shadow:
         0 5px hsla(2 25% 46% / .5),
         0 10px hsla(2 60% 46% / .3),
-        0 15px hsla(2 45% 46% / .1); 
-    
+        0 15px hsla(2 45% 46% / .1);
+
     display: inline-block;
     padding: .75em 1em;
     width: 6.5em;
     height: 2em;
     margin: auto;
-    
+
     transition: box-shadow 150ms ease, color 300ms ease;
 }
 
 .cta:hover {
     color: var(--clr-900);
     background-color: hsla(40, 95%, 50%, 0.9);
-    box-shadow: 
+    box-shadow:
         0 2.5px hsla(2 25% 46% / .75),
         0 5px hsla(2 60% 46% / .6),
         0 7.5px hsla(2 45% 46% / .5);
@@ -254,28 +254,23 @@ nav {
 
 .menu-item-card {
     display: grid;
-    grid-template-columns: 
-        1fr
-        1fr
-        1fr
-        1fr
-        .7fr
-        1.3fr;
+    grid-template-columns:
+        1fr 1fr 1fr 1fr .7fr 1.3fr;
     background-color: rgba(245 245 245 / .3);
     grid-auto-rows: max-content;
     width: var(--card-width);
     height: auto;
     padding: var(--card-gap);
-    
+
     border-radius: 7px;
-    box-shadow: 0 0 5px rgba(0 0 0 / .4);    
+    box-shadow: 0 0 5px rgba(0 0 0 / .4);
 }
 
 .menu-item-name,
 .menu-item-price {
     font-size: 1.125rem;
     box-shadow: 0 0 2px rgba(0, 0, 0, .3);
-    
+
 }
 
 .menu-item-header {
@@ -293,7 +288,7 @@ nav {
     cursor: pointer;
     overflow: hidden;
     grid-column: span 5;
-    
+
     padding: .5em 0 .5em .5em;
     border: none;
     text-align: left;
@@ -308,7 +303,7 @@ nav {
 }
 
 .menu-item-price {
-    text-align: right; 
+    text-align: right;
     padding: .5em;
     margin-block: .5em;
     font-size: calc(var(--fs-p) * 1.125);
@@ -350,62 +345,69 @@ select {
     top: 8em;
     margin-inline: auto;
     padding: clamp(.25em, 5vw, 10vw) 2em;
-    
+
     width: clamp(320px, 90vw, 80%);
-    background:rgba(0 0 0 / .025);
+    background: rgba(0 0 0 / .025);
     border-radius: 20px;
     background-color: rgba(240, 90, 31, .1);
     box-shadow: 0 0 5px rgba(0 0 0 / .2);
-    font-size: var(--fs-submenu);   
-    
-    display: flex;
+    font-size: var(--fs-submenu);
 }
 
 .cart-title {
     color: var(--clr-250);
     font-size: calc(var(--fs-h1) * .5);
     line-height: .8;
-    width: 100%;
-    
+    width: max-content;
+    display: inline-block;
 }
 
 .cart-list {
-    background: red;
-}
-
-.cart-list li {
+    position: relative;
+    inset: 0;
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    margin-block: 1em;
 }
 
-.item-name {
-    width: 75%;
-    grid-column: 1 / 4;
+.cart-row,
+.cart-subtotal,
+.vat,
+.cart-total {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-block: .25em;
+}
+
+
+.item-name,
+.subtotal,
+.vat-desc,
+.total {
+    margin-right: auto;
+    width: max-content;
 }
 
 .quantity-value {
-    width: 3em;
+    width: 3.5em;
     height: 2em;
+    margin-inline: .5em;
     border: none;
     background-color: rgba(255 255 255 / .7);
     border-radius: .5em;
     box-shadow: inset 0 0 5px rgba(0 0 0 / .2);
-    grid-column: 4 / 5;
 }
 
 .right-align {
     text-align: right;
 }
 
-.item-name,
 .price-value,
-.quantity-value {
-    padding: 0.5em;
-}
-
-.price-value {
-    grid-column: 5 / 6;
+.subtotal-value,
+.vat-price,
+.total-value {
+    margin: .25em 1.5em;
 }
 
 .clear-btn {
@@ -417,7 +419,7 @@ select {
     border: none;
     cursor: pointer;
     box-shadow: inset 0 0 5px rgba(0 0 0 / .2);
-    grid-column: 6 / 7;
+    margin-inline: .5em;
 }
 
 .clear-btn:hover {
@@ -425,18 +427,6 @@ select {
     color: var(--clr-900);
 }
 
-.vat-desc {
-    text-align: left;
-    grid-column: 1 / 4;
-}
-
-.subtotal {
-    grid-column: 1 / 4;
-}
-
-.subtotal-value {
-    grid-column: 5 / 6;
-}
 
 .price-value::before,
 .subtotal-value::before,
@@ -445,6 +435,26 @@ select {
     content: '€';
     position: relative;
     right: .25em;
+}
+
+.pay {
+    border: none;
+    padding: 1em 3em;
+    margin-block: 1em;
+    background: var(--clr-750);
+    color: var(--clr-900);
+    border-radius: 50px;
+    font-size: var(--fs-p);
+    transition: outline 150ms ease, color 500ms ease;
+}
+
+.pay:hover {
+    background: transparent;
+    outline-style: solid;
+    outline-width: 8px;
+    outline-offset: -8px;
+    outline-color: var(--clr-750);
+    color: var(--clr-750);
 }
 
 /* Toggles */
@@ -470,11 +480,11 @@ footer {
     font-size: var(--fs-descripive);
     background-color: var(--clr-250);
     opacity: .8;
-    
+
 }
 
 
-footer a { 
+footer a {
     color: var(--clr-900);
 }
 
@@ -487,7 +497,7 @@ footer a {
         inset: 0;
         height: 100vh;
     }
-    
+
     .cta__wrapper {
         top: 35%;
         left: 15%;
@@ -502,7 +512,7 @@ footer a {
 
     .menu-item-card {
         --card-width: 100vw;
-        --card-gap: 0;        
+        --card-gap: 0;
     }
 
     #title {
@@ -531,18 +541,14 @@ footer a {
     .menu-item-card {
         width: calc(var(--card-width) * .925);
     }
-    
+
     .menu-item-name,
     .menu-item-price,
     .form-fam-meal-item {
         font-size: 1rem;
     }
 
-    .form-fam-meal {
-        
-    }
-
     footer {
         padding-inline: .5em;
-    }   
+    }
 }
