@@ -32,7 +32,7 @@
     <nav class="title-wrapper">
         <a href="index.html" id="title">Di Lucia's</a>
         <p class="location-title">Clonshaugh</p>
-        <a href="shop.html"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#cart"><i class="fas fa-shopping-cart"></i></a>
     </nav>
 
     <!-- Menu (hidden by default, will show once the Call to Action is clicked) -->
@@ -298,6 +298,60 @@
         </article>
     </section>
 
+    <!-- Cart Section -->
+    <section class="cart-container hide" id="cart">
+        <h3 class="cart-title">Your cart items:</h3>
+        <ul class="cart-list" id="tableBody">
+            
+            <li class="cart-row">
+                <p class="item-name">Item 1</p>
+                <input class="quantity-value right-align" type="number" value="1" min="1">
+                <button class="clear-btn">&times;</button>
+                <p class="price-value right-align">0</p>
+            </li>
+            <li class="cart-row">
+                <p class="item-name">Item 1</p>
+                <input class="quantity-value right-align" type="number" value="1" min="1">
+                <button class="clear-btn">&times;</button>
+                <p class="price-value right-align">0</p>
+            </li>
+            <li class="cart-row">
+                <p class="item-name">Item 1</p>
+                <input class="quantity-value right-align" type="number" value="1" min="1">
+                <button class="clear-btn">&times;</button>
+                <p class="price-value right-align">0</p>
+            </li>
+            <li class="cart-row">
+                <p class="item-name">Item 1</p>
+                <input class="quantity-value right-align" type="number" value="1" min="1">
+                <button class="clear-btn">&times;</button>
+                <p class="price-value right-align">0</p>
+            </li>
+            <li class="cart-row">
+                <p class="item-name">Item 1</p>
+                <input class="quantity-value right-align" type="number" value="1" min="1">
+                <button class="clear-btn">&times;</button>
+                <p class="price-value right-align">0</p>
+            </li>
+            <li class="cart-subtotal">
+                <p class="subtotal">Subtotal</p>
+                <p class="subtotal-value right-align">0</p>
+            </li>
+            <li class="vat">
+                <p class="vat-desc">Cart items Value Added Tax at 23%</p>
+                <p class="vat-value"></p>
+                <p class="vat-price right-align">0</p>
+            </li>
+            <li class="cart-total">
+                <p><strong class="total">Total</strong></p>
+                <p class="total-value right-align"><strong>0</strong></p>
+            </li>
+        </ul>
+
+        <button id="pay" class="pay">Go to payment</button>
+    </section>
+
+
     <footer>
         <a href="tel:+353018670422" title="Phone Number" aria-label="Phone Number"><i class="fas fa-phone-alt"></i></a>
         <a href="https://goo.gl/maps/2bzmMWP4LbpjCWyo9" target="_blank" title="D17 EK03"
@@ -307,7 +361,6 @@
                 class="fab fa-facebook-f"></i></a>
         <p>Copyright Di Lucia's <span id="year"></span></p>
     </footer>
-    <script src="assets/script/index.js"></script>
     <script src="assets/script/main.js"></script>
     <script src="https://kit.fontawesome.com/e620967c09.js" crossorigin="anonymous"></script>
 </body>
