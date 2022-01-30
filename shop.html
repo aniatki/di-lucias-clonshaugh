@@ -11,8 +11,8 @@
 
 <body>
     <img class="background-image" src="assets/images/burgers-on-plate-coca-cola.jpeg"
-        alt="Burgers on Plate beside Coca Cola Cans">
-
+    alt="Burgers on Plate beside Coca Cola Cans">
+    
     <nav class="title-wrapper">
         <a href="index.html" id="title">Di Lucia's</a>
         <p class="location-title">Clonshaugh</p>
@@ -22,6 +22,24 @@
         <h3 class="cart-title">Your cart items:</h3>
         <ul class="cart-list" id="tableBody">
             
+            <li class="cart-row">
+                <p class="item-name">Item 1</p>
+                <input class="quantity-value right-align" type="number" value="1" min="1">
+                <button class="clear-btn">&times;</button>
+                <p class="price-value right-align">0</p>
+            </li>
+            <li class="cart-row">
+                <p class="item-name">Item 1</p>
+                <input class="quantity-value right-align" type="number" value="1" min="1">
+                <button class="clear-btn">&times;</button>
+                <p class="price-value right-align">0</p>
+            </li>
+            <li class="cart-row">
+                <p class="item-name">Item 1</p>
+                <input class="quantity-value right-align" type="number" value="1" min="1">
+                <button class="clear-btn">&times;</button>
+                <p class="price-value right-align">0</p>
+            </li>
             <li class="cart-row">
                 <p class="item-name">Item 1</p>
                 <input class="quantity-value right-align" type="number" value="1" min="1">
@@ -42,22 +60,23 @@
                 <p class="total-value right-align"><strong>0</strong></p>
             </li>
         </ul>
-
-        <button id="pay" class="pay">Go to payment</button>
+        
+        <button id="pay" class="pay">Checkout <i class="fas fa-arrow-circle-right"></i></button>
     </section>
-
+    
     <footer>
         <a href="tel:+353018670422" title="Phone Number" aria-label="Phone Number"><i class="fas fa-phone-alt"></i></a>
         <a href="https://goo.gl/maps/2bzmMWP4LbpjCWyo9" target="_blank" title="D17 EK03"
             aria-label="Google Maps location link (Opens in a new tab)"><i class="fas fa-location-arrow"></i></a>
-        <a href="https://www.facebook.com/Di-Lucias-Priorswood-867877246612696/" target="_blank"
+            <a href="https://www.facebook.com/Di-Lucias-Priorswood-867877246612696/" target="_blank"
             title="Visit our Facebook Page" aria-label="Di Lucia's Facebook Page(Opens in a new tab)"><i
-                class="fab fa-facebook-f"></i></a>
-        <p>Copyright Di Lucia's <span id="year"></span></p>
-    </footer>
-    <script src="assets/script/main.js"></script>
-    <script src="assets/script/index.js"></script>
-    <script src="https://kit.fontawesome.com/e620967c09.js" crossorigin="anonymous"></script>
+            class="fab fa-facebook-f"></i></a>
+            <p>Copyright Di Lucia's <span class="year"></span></p>
+        </footer>
+        <script src="assets/script/shop.js"></script>
+        
+        <script src="https://kit.fontawesome.com/e620967c09.js" crossorigin="anonymous"></script>
+        <script src="assets/script/main.js"></script>
 </body>
 
 </html>
