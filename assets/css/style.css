@@ -97,9 +97,11 @@ nav {
     top: 0;
     left: 0;
     backdrop-filter: blur(50px);
+
     border-radius: 0 0 10px 10px;
     background-color: rgba(0 0 0 / .3);
     background-clip: padding-box;
+
     box-shadow: 0 0 20px rgba(0 0 0 / .4);
 }
 
@@ -203,6 +205,21 @@ nav {
     line-height: 1;
     text-shadow: 5px 5px 2px rgba(0, 0, 0, .1);
     margin: auto;
+    text-shadow: 0 0 2px black;
+}
+
+.accent {
+    position: relative;
+}
+
+.accent::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 5px;
+    left: 0;
+    bottom: 3px;
+    background-image: linear-gradient(10deg, blue, transparent)
 }
 
 .cta {
@@ -236,6 +253,7 @@ nav {
 .cta:focus {
     background-color: hsla(200 88% 53% / 1);
     box-shadow: none;
+    color: var(--clr-900);
 }
 
 /* Menu Section */
@@ -292,6 +310,8 @@ nav {
     text-align: left;
     margin-block: .5em;
     transition: background-color 150ms ease;
+    height: 2.4rem;
+    border-radius: 25vw 0 0 25vw;
 }
 
 .menu-item-name:hover {
@@ -367,9 +387,11 @@ select {
     margin-block: 1em;
 }
 
+.item-name {
+    margin-left: 2.5%;
+}
+
 .cart-row,
-.cart-subtotal,
-.vat,
 .cart-total {
     display: inline-flex;
     align-items: center;
@@ -380,8 +402,6 @@ select {
 
 
 .item-name,
-.subtotal,
-.vat-desc,
 .total {
     margin-right: auto;
     width: max-content;
@@ -402,8 +422,6 @@ select {
 }
 
 .price-value,
-.subtotal-value,
-.vat-price,
 .total-value {
     margin: .25em 1.5em;
 }
@@ -427,8 +445,6 @@ select {
 
 
 .price-value::before,
-.subtotal-value::before,
-.vat-price::before,
 .total-value::before {
     content: '€';
     position: relative;
@@ -439,7 +455,6 @@ select {
     border: none;
     padding: 1em 3em;
     margin-block: 1em;
-    /* background: var(--clr-750); */
     background: hsla(215, 100%, 40%, 0.9);
     color: var(--clr-900);
     border-radius: 50px;
@@ -454,12 +469,6 @@ select {
     outline-offset: -5px;
     outline-color: hsla(215, 100%, 19%, 0.9);
     color: hsla(215, 100%, 19%, 0.9);
-}
-
-/* List in home page will be hidden */
-
-#list-in-index {
-    visibility: hidden;
 }
 
 /* Toggles */
@@ -498,7 +507,7 @@ footer a {
         inset: 0;
         height: 100vh;
     }
-    
+
     .cta__wrapper {
         top: 35%;
         left: 15%;

@@ -29,43 +29,37 @@ cta[0].addEventListener('click', function (event) {
 })
 
 familyMeal.addEventListener('click', function (event) {
-    familyForm[0].classList.toggle('hide');    
+    familyForm[0].classList.toggle('hide');
 })
 submitBtn[0].addEventListener('click', function (event) {
     familyForm[0].classList.toggle('hide');
     alert('Item added to cart');
 })
 
-// Get item name and price(number) WORKS
+// Get item name and price WORKS
 
 let btn = document.getElementsByClassName('menu-item-name');
 
 for (var i = 0; i < btn.length; i++) {
     let setBtn = btn[i];
+    setBtn.setAttribute('title', "Add to cart")
     setBtn.addEventListener('click', setLocalStorage)
     setBtn.addEventListener('mouseup', addToCart)
+    console.log(setLocalStorage)
 }
 
-function setLocalStorage (event) {
+function setLocalStorage(event) {
     let btnClicked = event.target;
     var itemName = btnClicked.innerText;
     var itemPrice = parseFloat(btnClicked.nextElementSibling.innerText.replace('€', ''));
-    
-    localStorage.setItem("item", `
-    <li class="cart-row>
-        <p class="item-name">${itemName}</p>
-        <input class="quantity-value right-align" type="number" value="1" min="1">
-        <button class="clear-btn">&times;</button>
-        <p class="price-value right-align">€ ${itemPrice}</p>
-    </li>
-    `
-    )
+
+    localStorage.setItem("item", `<li class="cart-row><p class="item-name">${itemName}</p><input class="quantity-value right-align" type="number" value="1" min="1"><button class="clear-btn">&times;</button><p class="price-value right-align">€ ${itemPrice}</p></li>`)
+    console.log(localStorage.item)
 }
 
-function addToCart (event) {
+function addToCart(event) {
     let indexList = document.getElementById('list-in-index')
     let newRow = document.createElement('li')
     newRow.innerHTML = `${localStorage.item}`;
     newRow.classList.add('cart-row')
 }
-
