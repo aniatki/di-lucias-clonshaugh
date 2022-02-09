@@ -1,20 +1,20 @@
-// Updating copyright year WORKS
+// Updating copyright year
 
 let year = document.getElementsByClassName('year')[0];
 year.innerText = new Date().getFullYear();
 
-// Removing items from cart WORKS
+// Removing items from cart
 
 const clearButtons = document.getElementsByClassName('clear-btn');
 for (let i = 0; i < clearButtons.length; i++) {
-    let button = clearButtons[i]
+    let button = clearButtons[i];
     button.addEventListener('click', function (event) {
-        let buttonClicked = event.target
-        buttonClicked.parentElement.remove()
+        let buttonClicked = event.target;
+        buttonClicked.parentElement.remove();
     })
 }
 
-// Showing / Hiding elements WORKS
+// Showing / Hiding elements
 
 const cta = document.getElementsByClassName('cta');
 const heroSection = document.getElementsByClassName('hero-container');
@@ -36,30 +36,22 @@ submitBtn[0].addEventListener('click', function (event) {
     alert('Item added to cart');
 })
 
-// Get item name and price WORKS
+// Get item name and price
 
 let btn = document.getElementsByClassName('menu-item-name');
 
 for (var i = 0; i < btn.length; i++) {
     let setBtn = btn[i];
-    setBtn.setAttribute('title', "Add to cart")
-    setBtn.addEventListener('click', setLocalStorage)
-    setBtn.addEventListener('mouseup', addToCart)
-    console.log(setLocalStorage)
-}
-
-function setLocalStorage(event) {
-    let btnClicked = event.target;
-    var itemName = btnClicked.innerText;
-    var itemPrice = parseFloat(btnClicked.nextElementSibling.innerText.replace('€', ''));
-
-    localStorage.setItem("item", `<li class="cart-row><p class="item-name">${itemName}</p><input class="quantity-value right-align" type="number" value="1" min="1"><button class="clear-btn">&times;</button><p class="price-value right-align">€ ${itemPrice}</p></li>`)
-    console.log(localStorage.item)
-}
-
-function addToCart(event) {
-    let indexList = document.getElementById('list-in-index')
-    let newRow = document.createElement('li')
-    newRow.innerHTML = `${localStorage.item}`;
-    newRow.classList.add('cart-row')
+    setBtn.setAttribute('title', "Add to cart");
+    
+    setBtn.addEventListener('click', setLocalStorage);
+    
+    function setLocalStorage(event) {
+        let btnClicked = event.target;
+        var itemName = btnClicked.innerText;
+        var itemPrice = btnClicked.nextElementSibling.innerText.replace('€', '');
+        
+        localStorage.setItem("itemName", itemName);
+        localStorage.setItem("itemPrice", itemPrice);
+    }    
 }
