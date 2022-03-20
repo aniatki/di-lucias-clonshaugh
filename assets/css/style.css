@@ -187,6 +187,56 @@ a {
     top: 50vh;
 }
 
+.container.menu {
+    background: var(--clr-main-bg);
+}
+
+.info {
+    padding-top: 5rem;
+    font-size: .75rem;
+    text-align: center;
+}
+
+.menu-card {
+    background: white;
+    color: black;
+    display: grid;
+    grid-template-columns: auto;
+    margin-top: 2rem;
+    margin-inline: auto;
+    padding: 1rem .5rem;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.menu-card-header {
+    text-align: center;
+}
+
+.menu-button {
+    font-size: 1.5rem;
+    padding: .75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    font-family: "Montserrat";
+    background-color: var(--clr-panel-bg);
+    position: relative;
+}
+
+.menu-button:hover {
+    background-color: var(--clr-primary);
+    color: white;
+}
+
+.menu-button:hover::after {
+    content: 'C';
+    position: absolute;
+    left: 65%;
+}
+
 footer {
     color: black;
     padding: 0 1rem;
