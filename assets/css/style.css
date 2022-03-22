@@ -99,7 +99,7 @@ a:visited {
 }
 
 .hamburger-menu {
-    background: none;
+    background: transparent;
     outline: none;
     border: none;
     color: white;
@@ -112,7 +112,6 @@ a:visited {
 .logo:hover,
 .logo:focus,
 .hamburger-menu:hover,
-.hamburger-menu:focus,
 .nav li a:hover,
 .nav li a:focus {
     color: rgb(229, 203, 192);
