@@ -178,6 +178,9 @@ const categories = [{
             }
         }
     },
+
+// WORK ON CODE BELOW
+
     // {
     //     "kebabs": {
     //         "title": "Kebabs",
@@ -258,62 +261,77 @@ const titles = function () {
         menuTitles.push(Object.entries(categories[i])[0][1].title)
     }
     return menuTitles
-
 }
 
 itemNames = function () {
     var menuNames = []
     for (i = 0; i < categories.length; i++) {
-        submenuArray = Object.entries(categories[i])[0][1].subMenu
-        for (var i = 0; i < submenuArray.length; i++) {
-            console.log(submenuArray[i])
+        var submenuArray = Object.values(Object.entries(categories[i])[0][1].subMenu)
+        for (i = 0; i < submenuArray.length; i++) {
+            menuNames.push(submenuArray[i].name)
         }
-        // menuNames.push(Object.entries(categories[i])[0])
     }
-    // return menuNames
+    return menuNames
 }
 
-itemNames()
-console.log("hello")
+itemPrices = function () {
+    var menuItemPrices = []
+    for (i = 0; i < categories.length; i++) {
+        var submenuArray = Object.values(Object.entries(categories[i])[0][1].subMenu)
+        for (i = 0; i < submenuArray.length; i++) {
+            menuItemPrices.push(submenuArray[i].price)
+        }
+    }
+    return menuItemPrices
+}
 
 
+itemAllergens = function () {
+    var menuItemAllergen = []
+    for (i = 0; i < categories.length; i++) {
+        var submenuArray = Object.values(Object.entries(categories[i])[0][1].subMenu)
+        for (i = 0; i < submenuArray.length; i++) {
+            menuItemAllergen.push(submenuArray[i].allergen)
+        }
+    }
+    return menuItemAllergen
+}
 
-// for (let category of categories) {
+// WORK ON CODE BELOW
 
-//     let titles = Object.values(category)[0].title;
-//     document.body.append(h2)
-//     let entry = Object.values(category)[0].subMenu;
-//     let names = Object.keys(entry);
-//     let prices = Object.values(entry);
+function populateMenuPage() {
+    for (i = 0; i < titles().length; i++) {
+        var section = document.createElement('section')
+        section.classList.add('menu-card')
 
-//     const body = document.body
-//     const menu = body.querySelector('.menu')
+        var h2 = document.createElement('h2')
+        h2.classList.add("menu-card-header")
+        h2.innerText = `${titles()[i]}`
+        
+        for (i = 0; i < itemNames().length; i++) {
+            var button = document.createElement('button')
+            button.classList.add('menu-button')
 
-//     var section = document.createElement('section')
-//     section.classList.add('menu-card')
+            var spanName = document.createElement('span')
+            spanName.classList.add('menu-item-name')
+            spanName.innerText =`${itemNames()[i]}`
+            button.append(spanName)
+        }
+        for (i = 0; i < itemPrices().length; i++) {
+            var spanPrice = document.createElement('span')
+            spanPrice.classList.add('menu-item-price')
+            spanPrice.innerText = itemPrices()[i]            
+            button.append(spanPrice)
+        }
+        var pInfo = document.createElement('p')
+        pInfo.classList.add('allergen-info')
+        pInfo.innerText = "Contains: "
+        var pInfoSpan = document.createElement('span')
+        // pInfoSpan.innerText = `${itemAllergens()[i]}`
+        pInfo.append(pInfoSpan)
+        section.append(h2, button, pInfo)
+        document.body.append(section)
+    }
+}
 
-//     var h2 = document.createElement('h2')
-//     h2.classList.add("menu-card-header")
-//     h2.innerHTML = `${category[titles]}`
-
-//     var button = document.createElement('button')
-//     button.classList.add('menu-button')
-
-//     var span = document.createElement('span')
-//     var spanName = span
-//     var spanPrice = span
-//     spanName.classList.add('menu-item-name')
-//     spanName.innerHTML(`${names[i]}`)
-//     spanPrice.classList.add('menu-item-price')
-//     spanPrice.innerHTML(`${(Math.round(prices[i] * 100) / 100).toFixed(2)}`)
-
-//     var pInfo = document.createElement('p')
-//     pInfo.classList.add('allergen-info')
-//     pInfo.innerText = "Contains: "
-//     var pInfoSpan = span
-//     pInfoSpan.innerText = `${allergens}`
-
-
-
-
-// }
+populateMenuPage()
