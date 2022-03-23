@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Di Lucia's Clonshaugh | Home</title>
+    <title>Di Lucia's Clonshaugh | Menu</title>
 
 </head>
 
@@ -31,7 +31,18 @@
         </header>
 
         <p class="info">Click on the menu items to add them to your cart.</p>
-        
+        <div class="cards">
+        </div>
+        <!--     
+        <section class="menu-card">
+            <h2 class="menu-card-header">Chips</h2>
+            <button class="menu-button">
+                <span class="menu-item-name">Chips</span>
+                <img src="assets/images/icon_basket.png" alt="basket icon">
+                <span class="menu-item-price">3.40</span>
+            </button>
+            <p class="allergen-info">Contains: <span>Gluten, Dairy, Egg</span></p>
+        </section> -->
 
         <footer>
             <a href="tel:+353018670422" title="Phone Number" aria-label="Phone Number"><i
@@ -42,7 +53,18 @@
                 title="Visit our Facebook Page" aria-label="Di Lucia's Facebook Page(Opens in a new tab)"><i
                     class="fab fa-facebook-f"></i></a>
             <p>Copyright Di Lucia's <span class="year"></span></p>
+        
         </footer>
+        <script>
+
+            let year = document.getElementsByClassName('year')[0];
+            year.innerText = new Date().getFullYear();
+            
+            document.querySelector('.hamburger-menu').addEventListener('click', function (event) {
+                document.querySelector('.nav').classList.toggle('hidden')
+            });
+    
+        </script>
     </div>
 </body>
 

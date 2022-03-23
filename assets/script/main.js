@@ -179,7 +179,7 @@ const categories = [{
         }
     },
 
-// WORK ON CODE BELOW
+    // WORK ON CODE BELOW
 
     // {
     //     "kebabs": {
@@ -244,16 +244,8 @@ const categories = [{
 ]
 const allergens = ['gluten', 'milk', 'fish', 'eggs', 'celery', 'mustard', 'soya', 'sulphites', 'shellfish', 'molluscs', 'peanuts', 'nuts', 'sesame', 'lupin']
 
-
-let year = document.getElementsByClassName('year')[0];
-year.innerText = new Date().getFullYear();
-
-
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-const nav = document.querySelector('.nav');
-hamburgerMenu.addEventListener('click', function (event) {
-    nav.classList.toggle('hidden')
-})
+const menu = document.querySelector('.menu')
+const cards = document.querySelector('.cards')
 
 const titles = function () {
     var menuTitles = []
@@ -263,7 +255,7 @@ const titles = function () {
     return menuTitles
 }
 
-itemNames = function () {
+const itemNames = function () {
     var menuNames = []
     for (i = 0; i < categories.length; i++) {
         var submenuArray = Object.values(Object.entries(categories[i])[0][1].subMenu)
@@ -274,7 +266,7 @@ itemNames = function () {
     return menuNames
 }
 
-itemPrices = function () {
+const itemPrices = function () {
     var menuItemPrices = []
     for (i = 0; i < categories.length; i++) {
         var submenuArray = Object.values(Object.entries(categories[i])[0][1].subMenu)
@@ -286,7 +278,7 @@ itemPrices = function () {
 }
 
 
-itemAllergens = function () {
+const itemAllergens = function () {
     var menuItemAllergen = []
     for (i = 0; i < categories.length; i++) {
         var submenuArray = Object.values(Object.entries(categories[i])[0][1].subMenu)
@@ -300,29 +292,41 @@ itemAllergens = function () {
 // WORK ON CODE BELOW
 
 function populateMenuPage() {
-    for (i = 0; i < titles().length; i++) {
+    for (let title of titles()) {
         var section = document.createElement('section')
         section.classList.add('menu-card')
 
         var h2 = document.createElement('h2')
         h2.classList.add("menu-card-header")
-        h2.innerText = `${titles()[i]}`
-        
-        for (i = 0; i < itemNames().length; i++) {
+        h2.innerText = `${title}`
+
+        // for (i = 0; i < itemNames().length; i++) {
+        //     var button = document.createElement('button')
+        //     button.classList.add('menu-button')
+
+        //     var spanName = document.createElement('span')
+        //     spanName.classList.add('menu-item-name')
+        //     spanName.innerText = `${itemNames()[i]}`
+        //     button.append(spanName)
+        // }
+
+        for (let category of categories) {
             var button = document.createElement('button')
             button.classList.add('menu-button')
 
             var spanName = document.createElement('span')
             spanName.classList.add('menu-item-name')
-            spanName.innerText =`${itemNames()[i]}`
+            spanName.innerText = `${itemNames()[i]}`
             button.append(spanName)
         }
-        for (i = 0; i < itemPrices().length; i++) {
-            var spanPrice = document.createElement('span')
-            spanPrice.classList.add('menu-item-price')
-            spanPrice.innerText = itemPrices()[i]            
-            button.append(spanPrice)
-        }
+
+        // for (i = 0; i < itemPrices().length; i++) {
+        //     var spanPrice = document.createElement('span')
+        //     spanPrice.classList.add('menu-item-price')
+        //     spanPrice.innerText = itemPrices()[i]
+        //     button.append(spanPrice)
+        // }
+
         var pInfo = document.createElement('p')
         pInfo.classList.add('allergen-info')
         pInfo.innerText = "Contains: "
@@ -330,7 +334,7 @@ function populateMenuPage() {
         // pInfoSpan.innerText = `${itemAllergens()[i]}`
         pInfo.append(pInfoSpan)
         section.append(h2, button, pInfo)
-        document.body.append(section)
+        cards.append(section)
     }
 }
 
