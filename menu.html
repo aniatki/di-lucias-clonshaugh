@@ -20,15 +20,17 @@
 
 <body>
     <div class="container menu">
-        <header class="navbar">
-            <a class="logo" href="index.html">Di Lucia's Clonshaugh</a>
-            <button class="hamburger-menu">&#9776</button>
-            <ul class="nav hidden">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="cart.html">Cart</a></li>
-            </ul>
-        </header>
+        <nav class="navbar">
+            <div>
+                <a class="logo" href="index.html">Di Lucia's Clonshaugh</a>
+                <button class="hamburger-menu">&#9776</button>
+                <ul class="nav hidden">
+                    <li><a href="/index.html" class="active">Home</a></li>
+                    <li><a href="/menu.html">Menu</a></li>
+                    <li><a href="/cart.html">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
 
         <p class="info">Click on the menu items to add them to your cart.</p>
         <div class="cards">
@@ -53,17 +55,17 @@
                 title="Visit our Facebook Page" aria-label="Di Lucia's Facebook Page(Opens in a new tab)"><i
                     class="fab fa-facebook-f"></i></a>
             <p>Copyright Di Lucia's <span class="year"></span></p>
-        
+
         </footer>
         <script>
 
             let year = document.getElementsByClassName('year')[0];
             year.innerText = new Date().getFullYear();
-            
+
             document.querySelector('.hamburger-menu').addEventListener('click', function (event) {
                 document.querySelector('.nav').classList.toggle('hidden')
             });
-    
+
         </script>
     </div>
 </body>

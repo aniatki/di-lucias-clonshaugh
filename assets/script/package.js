@@ -1,8 +1,8 @@
 const categories = [{
-        "chips": {
-            "title": "Chips",
-            "subMenu": {
-                "chips": {
+        fries: {
+            title: "Chips",
+            subMenu: {
+                chips: {
                     name: "Chips",
                     price: 3.4,
                     allergen: [0]
@@ -164,24 +164,23 @@ function getMenuData() {
         let titles = Object.values(category)[0].title;
         let entry = Object.values(category)[0].subMenu;
         let names = Object.keys(entry);
+        console.log(names)
         let prices = Object.values(entry);
         for (var i = 0; i < names.length; i++) {
             let newCard = document.createElement("div");
             newCard.innerHTML =
-
-                `<section class="menu-card">
-            <h2 class="menu-card-header">${titles}</h2>
+            `<section class="menu-card">
+                <h2 class="menu-card-header">${titles}</h2>
                 <button class="menu-button">
                     <span class="menu-item-name">${names[i]}</span>
                     <span class="menu-item-price">&euro; ${(Math.round(prices[i] * 100) / 100).toFixed(2)}</span>
                 </button>
                 <p class="allergen-info">Contains: <span>Gluten, Dairy, Egg</span></p>
             </section>`
-            // document.body.append(newCard)
         }
     }
 }
 
 const allergens = ['gluten', 'milk', 'fish', 'eggs', 'celery', 'mustard', 'soya', 'sulphites', 'shellfish', 'molluscs', 'peanuts', 'nuts', 'sesame', 'lupin']
 
-// getMenuData()
+getMenuData()

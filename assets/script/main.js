@@ -1,5 +1,5 @@
 const categories = [{
-        chips: {
+        fries: {
             title: "Chips",
             subMenu: {
                 chips: {
@@ -300,15 +300,14 @@ function populateMenuPage() {
         h2.classList.add("menu-card-header")
         h2.innerText = `${title}`
 
-        // for (i = 0; i < itemNames().length; i++) {
-        //     var button = document.createElement('button')
-        //     button.classList.add('menu-button')
-
-        //     var spanName = document.createElement('span')
-        //     spanName.classList.add('menu-item-name')
-        //     spanName.innerText = `${itemNames()[i]}`
-        //     button.append(spanName)
-        // }
+        for (let name of itemNames()) {
+            var button = document.createElement('button')
+            button.classList.add('menu-button')
+            var spanName = document.createElement('span')
+            spanName.classList.add('menu-item-name')
+            spanName.innerText = `${name}`
+            button.append(spanName)
+        }
 
         for (let category of categories) {
             var button = document.createElement('button')
@@ -320,12 +319,12 @@ function populateMenuPage() {
             button.append(spanName)
         }
 
-        // for (i = 0; i < itemPrices().length; i++) {
-        //     var spanPrice = document.createElement('span')
-        //     spanPrice.classList.add('menu-item-price')
-        //     spanPrice.innerText = itemPrices()[i]
-        //     button.append(spanPrice)
-        // }
+        for (i = 0; i < itemPrices().length; i++) {
+            var spanPrice = document.createElement('span')
+            spanPrice.classList.add('menu-item-price')
+            spanPrice.innerText = itemPrices()[i]
+            button.append(spanPrice)
+        }
 
         var pInfo = document.createElement('p')
         pInfo.classList.add('allergen-info')
