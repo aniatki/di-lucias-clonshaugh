@@ -46,12 +46,13 @@ a {
 
 .navbar {
     position: sticky;
-    top: 0;
     z-index: 1;
+    top: 0;
     display: flex;
     justify-content: space-between;
+    max-height: 4em;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 1em;
     background-color: rgba(0 0 0 / .4);
     color: white;
     backdrop-filter: blur(40px);
@@ -63,6 +64,7 @@ a {
     cursor: pointer;
     max-width: max-content;
     grid-column: 1;
+    white-space: nowrap;
 }
 
 a:visited {
@@ -79,29 +81,33 @@ a:visited {
     color: white;
     position: relative;
     display: inline-block;
-    padding-block: .25rem;
+    padding-block: .25em;
 }
 
 .nav li a::after {
     position: absolute;
     content: '';
-    bottom: 5px;
-    left: 3px;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 5px;
+    height: 3px;
     background-color: var(--clr-panel-bg);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 200ms var(--timing-function-bounce);
+    transition: transform 100ms var(--timing-function-bounce);
+    
 }
 
 .nav li a:hover::after {
-    transform: scaleX(.7) translateX(20px);
+    transform: scaleX(.4) translateX(10px);
 }
 
 .menu-container {
+    display: block;
     margin-inline-start: auto;
-    margin-inline-end: -100px;
+    margin-inline-end: -10%;
+    position: absolute;
+    right: 15%;
 }
 
 .hamburger-menu {
@@ -118,17 +124,21 @@ svg {
 .hamburger-menu:checked + .nav {
     transform: translateX(0) scale(1) translateY(100%);
     background-color: rgba(0 0 0 / .4);
-    padding: 0 1rem;
+    padding-inline: 2em;
+    padding-block: 1em;
+    z-index: 50;
+}
+
+.home-main {
+    position: absolute;
+    top: 0;
 }
 
 .logo:hover,
 .logo:focus,
-.hamburger-menu:hover > *,
 .nav li a:hover,
 .nav li a:focus {
     color: rgb(229, 203, 192);
-    fill: rgb(229, 203, 192);
-    stroke: rgb(229, 203, 192);
 }
 
 .hero {
@@ -151,10 +161,10 @@ svg {
     font-size: 2.5rem;
     text-align: center;
     font-weight: var(--fw-black);
-    letter-spacing: -0.1rem;
+    letter-spacing: -0.08rem;
     line-height: 1em;
     min-width: 70%;
-    margin: 10vh auto 0 auto;
+    margin: 2.5em auto 0 auto;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -170,7 +180,6 @@ svg {
     z-index: -5;
     top: 0;
     left: 0;
-    padding: 1em;
 }
 
 .clr-accent {
@@ -181,6 +190,8 @@ svg {
     display: inline-block;
     cursor: pointer;
     font-size: 1.25rem;
+    max-width: max-content;
+    max-height: max-content;
     color: white;
     background-color: var(--clr-accent);
     padding: .75rem 2rem;
@@ -191,7 +202,7 @@ svg {
 }
 
 .cta:hover {
-    background-color: #e23a10;
+    background-color: #430361;
 }
 
 .watermark {
