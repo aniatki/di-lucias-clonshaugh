@@ -14,6 +14,54 @@ for (let i = 0; i < clearButtons.length; i++) {
     })
 }
 
+function handleButtonClick(event) {
+    let name = event.target.innerText
+    let price = event.target.nextElementSibling.innerText.replace("€ ", "")
+    price = (Math.round((parseFloat(price)) * 100) / 100).toFixed(2)
+    
+    localStorage.setItem(name, name)
+    localStorage.setItem(`priceOf${name}`, price)
+    console.log(localStorage)
+}
+
+function createCartElement() {
+    if (localStorage.length == 0) return
+
+    for (var i = 0; i < localStorage.length; i++) {
+        console.log(localStorage[i])
+    }
+
+    // let itemName = localStorage.getItem("itemName")
+    // let itemPrice = localStorage.getItem("itemPrice")
+
+    // let newItem = document.createElement('li')
+    // newItem.classList.add("cart-row")
+    
+    // let namePElem = document.createElement('p')
+    // namePElem.classList.add('item-name')
+    // namePElem.innerHTML = `${itemName}`
+    // newItem.append(namePElem)
+    
+    // let quantityInpElem = document.createElement('input')
+    // quantityInpElem.classList.add('quantity-value', 'right-align')
+    // quantityInpElem.setAttribute('type', 'number')
+    // quantityInpElem.setAttribute('value', 1)
+    // quantityInpElem.setAttribute('min', 1)
+    // newItem.append(quantityInpElem)
+
+    // let deleteButton = document.createElement('button')
+    // deleteButton.classList.add('clear-btn')
+    // deleteButton.innerHTML = `&times;`
+    // newItem.append(deleteButton)
+
+    // let pricePElem = document.createElement('p')
+    // pricePElem.classList.add("price-value", "right-align")
+    // pricePElem.innerHTML = `€ ${itemPrice}`
+    // newItem.append(pricePElem)
+
+    // return newItem
+}
+
 if (document.querySelector(".menu")) {
     // Showing / Hiding elements
 
@@ -37,7 +85,7 @@ if (document.querySelector(".menu")) {
         alert('Item added to cart');
     })
 
-    // Get item name and price
+    // Click event for menu buttons
 
     let articles= document.getElementsByClassName("menu-item-card")
 
@@ -49,15 +97,11 @@ if (document.querySelector(".menu")) {
             itemName.addEventListener('click', handleButtonClick)
         }
     }
-
-    function handleButtonClick(event) {
-        let name = event.target.innerText
-        let price = parseFloat(event.target.nextElementSibling.innerText.replace("€ ", ""))
-        return name, price
-    }
 }
-// Create list items for cart page
 
-if (document.querySelector('.cart-container')) {
-    // Code for adding items to the cart
+if (document.querySelector('.cart-container')) {    
+//     let cart = document.getElementById('tableBody')
+//     let newElement = createCartElement()
+//     window.addEventListener('load', cart.prepend(newElement))
+    createCartElement()   
 }
